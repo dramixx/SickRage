@@ -220,7 +220,6 @@ def download_subtitles(episode, force_lang=None):  # pylint: disable=too-many-lo
     # From latest subliminal code:
     # episode_scores = {'hash': 215, 'series': 108, 'year': 54, 'season': 18, 'episode': 18, 'release_group': 9,
     #                   'format': 4, 'audio_codec': 2, 'resolution': 1, 'hearing_impaired': 1, 'video_codec': 1}
-	logger.log(u"TKN - user_score : {0}".format(user_score), logger.DEBUG)
 	user_score = 208 if sickbeard.SUBTITLES_PERFECT_MATCH else 198
 
     video = get_video(video_path, subtitles_path=subtitles_path, episode=episode)
