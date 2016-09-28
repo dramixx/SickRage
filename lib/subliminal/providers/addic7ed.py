@@ -60,10 +60,12 @@ class Addic7edSubtitle(Subtitle):
         if video.original_series and self.year is None or video.year and video.year == self.year:
             matches.add('year')
         # release_group
+        logger.debug('TKN - video release_group : %s', video.release_group)
+        logger.debug('TKN - subtitles release_group : %s', self.version)
         if (video.release_group and self.version and
-                        (sanitize_release_group(video.release_group.upper()) in sanitize_release_group(self.version.upper()) or
-                        (sanitize_release_group(video.release_group.upper()) in 'DIMENSION' and sanitize_release_group(self.version.upper()) in 'LOL' ) or
-                        (sanitize_release_group(video.release_group.upper()) in 'LOL' and sanitize_release_group(self.version.upper()) in 'DIMENSION') )):
+                (sanitize_release_group(video.release_group.upper()) in sanitize_release_group(self.version.upper()) or
+                (sanitize_release_group(video.release_group.upper()) in 'DIMENSION' and sanitize_release_group(self.version.upper()) in 'LOL' ) or
+                (sanitize_release_group(video.release_group.upper()) in 'LOL' and sanitize_release_group(self.version.upper()) in 'DIMENSION') )):
             matches.add('release_group')
         # resolution
         if video.resolution and self.version and video.resolution in self.version.lower():

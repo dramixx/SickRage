@@ -119,7 +119,7 @@ class Logger(object):  # pylint: disable=too-many-instance-attributes
             logging.getLogger('sickrage'),
             logging.getLogger('tornado.general'),
             logging.getLogger('tornado.application'),
-            # logging.getLogger('subliminal'),
+            logging.getLogger('subliminal'),
             # logging.getLogger('tornado.access'),
         ]
 
