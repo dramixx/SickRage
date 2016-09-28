@@ -61,7 +61,9 @@ class Addic7edSubtitle(Subtitle):
             matches.add('year')
         # release_group
         if (video.release_group and self.version and
-                sanitize_release_group(video.release_group) in sanitize_release_group(self.version)):
+                        (sanitize_release_group(video.release_group.upper()) in sanitize_release_group(self.version.upper()) or
+                        (sanitize_release_group(video.release_group.upper()) in 'DIMENSION' and sanitize_release_group(self.version.upper()) in 'LOL' ) or
+                        (sanitize_release_group(video.release_group.upper()) in 'LOL' and sanitize_release_group(self.version.upper()) in 'DIMENSION') )):
             matches.add('release_group')
         # resolution
         if video.resolution and self.version and video.resolution in self.version.lower():
